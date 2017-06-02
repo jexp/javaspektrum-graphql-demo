@@ -1,0 +1,12 @@
+query MovieByTitle($title: String) {
+  movieByTitle(title: $title) {
+    title
+    released
+    actors {
+      name
+      movies {
+        title
+      }
+    }
+  }
+}

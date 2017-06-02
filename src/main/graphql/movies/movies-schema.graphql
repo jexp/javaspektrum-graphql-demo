@@ -1,0 +1,23 @@
+type Movie {
+  title: String
+  released: Int
+  actors: [Person]
+  directors: [Person]
+}
+
+type Person {
+   name: String
+   born: Int
+   movies: [Movie]
+}
+
+schema {
+   query: QueryType
+   mutation: MutationType
+}
+type MutationType {
+  createPerson(name:String, born:Int) : Person
+}
+type QueryType {
+  movieByTitle(title:String) : Movie
+}
